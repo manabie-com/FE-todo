@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { AuthProvider } from './context/authContext';
+import { TodoProvider } from './context/todoContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<AuthProvider>
+		<TodoProvider>
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		</TodoProvider>
+	</AuthProvider>,
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
