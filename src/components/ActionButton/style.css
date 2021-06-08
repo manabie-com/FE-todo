@@ -1,0 +1,29 @@
+.action-button {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.action-button__active {
+  background-color: blue;
+  color: white;
+}
+
+.action-button button {
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px black;
+  border-radius: 4px;
+  min-height: 32px;
+  min-width: 80px;
+  padding: 4px 8px;
+}
+
+.action-button button:hover {
+  cursor: pointer;
+}
+
+.action-button button[disabled] {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: no-drop;
+}

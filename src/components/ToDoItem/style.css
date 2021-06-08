@@ -1,0 +1,51 @@
+.to-do-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.to-do-item > span {
+  flex: 1 1;
+  text-align: left;
+  margin-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.to-do-item__input {
+  flex: 1 1;
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 1px solid black;
+}
+
+.to-do-item button {
+  outline: none;
+  border: none;
+  height: 32px;
+  min-width: 32px;
+  min-height: auto;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 8px;
+  color: white;
+}
+
+.to-do-item__edit {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.to-do-item__delete {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.to-do-item__edit[disabled] {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: no-drop;
+}

@@ -1,0 +1,90 @@
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+  box-sizing: border-box;
+  position: fixed;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.notification-container.top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.notification-container.bottom-right {
+  bottom: 12px;
+  right: 12px;
+}
+
+.notification-container.top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.notification-container.bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+.notification {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 8px;
+}
+
+.notification.top-right {
+  margin-bottom: 10px;
+  transition: transform 0.6s ease-in-out;
+  animation: notify-from-right 0.7s;
+}
+
+.notification.bottom-right {
+  margin-top: 10px;
+  transition: transform 0.6s ease-in-out;
+  animation: notify-from-right 0.7s;
+}
+
+.notification.top-left {
+  margin-bottom: 10px;
+  transition: transform 0.6s ease-in-out;
+  animation: notify-from-left 0.7s;
+}
+
+.notification.bottom-left {
+  margin-top: 10px;
+  transition: transform 0.6s ease-in-out;
+  animation: notify-from-left 0.7s;
+}
+
+.notification .closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@keyframes notify-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes notify-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

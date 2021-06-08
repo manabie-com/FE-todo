@@ -27,7 +27,7 @@ const SignInPage = () => {
     }
 
     return (
-        <div style={{marginTop: '3rem', textAlign: 'left'}}>
+        <div style={{alignSelf: 'flex-start', marginTop: '3rem', textAlign: 'left'}}>
             <form onSubmit={signIn}>
                 <label htmlFor="user_id">
                     User id

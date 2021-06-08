@@ -6,7 +6,7 @@ export const DELETE_TODO = 'DELETE_TODO';
 export const DELETE_ALL_TODOS = 'DELETE_ALL_TODOS';
 export const TOGGLE_ALL_TODOS = 'TOGGLE_ALL_TODOS';
 export const UPDATE_TODO_STATUS = 'UPDATE_TODO_STATUS';
-
+export const UPDATE_TODO_CONTENT = "UPDATE_TODO_CONTENT";
 
 export interface SetTodoAction {
   type: typeof SET_TODO,
@@ -89,10 +89,32 @@ export function toggleAllTodos(checked: boolean): ToggleAllTodosAction {
   }
 }
 
+export interface UpdateTodoContentAction {
+  type: typeof UPDATE_TODO_CONTENT;
+  payload: {
+    todoId: string;
+    value: string;
+  };
+}
+
+export function updateTodoContent(
+  todoId: string,
+  value: string
+): UpdateTodoContentAction {
+  return {
+    type: UPDATE_TODO_CONTENT,
+    payload: {
+      todoId,
+      value,
+    },
+  };
+}
+
 export type AppActions =
   SetTodoAction |
   CreateTodoAction |
   UpdateTodoStatusAction |
   DeleteTodoAction |
   DeleteAllTodosAction |
-  ToggleAllTodosAction;
+  ToggleAllTodosAction |
+  UpdateTodoContentAction;
