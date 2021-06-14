@@ -1,0 +1,19 @@
+.todoListContainer {
+    width: auto;
+    text-align: left;
+    padding: 10px 0;
+    overflow: auto;
+    height:350px;
+}
+
+.todoListContainer h1 {
+    text-align: center;
+    opacity: .2;
+    color: var(--text-default);
+}
+
+@media only screen and (max-width: 500px) {
+    .todoListContainer {
+        height: 100%;
+    }
+}

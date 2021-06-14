@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,53 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.App div {
+  position: relative;
+}
+
+:root {
+  /* primary */
+  --background-primary: #FFFFFF;
+  --foreground-primary: #1D1D42;
+  --foreground-secondary: #F0F0F0;
+  --button-primary: #3333c4;
+  --title-header: #1D1D42;
+  --text-default: #131313;
+  --text-oposite-default: #FFFFFF;
+  --remove-btn: #D02654;
+  --hover-default: #f8f8f8;
+  /* Input */
+  --title-input:#919EAB;
+  --border-input:#DFE3E8;
+  --border-input-focus: #3333c4;
+  --border-input-focus-error: #D02654;
+  --title-input-focus: #3333c4;
+  --title-input-focus-error: #D02654;
+  --placeholder-input: rgba(104, 112, 137, 0.650447);
+  /* Checkbox */
+  --background-checkbox: #F0F0F0;
+  --background-checkbox-hover: #ccc;
+  /* Toolbar */
+  --mark-all: #3030c5;
+  --remove-all: #D02654;
+  /* Filter */
+  --all-filter: #bac8ff;
+  --active-filter: #fff0e6;
+  --completed-filter: #d4ffd4;
+  --border-all-filter: #3d62db;
+  --border-active-filter: #df8d08;
+  --border-completed-filter: #47b547;
+}
+
+*:focus {
+  outline: none;
 }

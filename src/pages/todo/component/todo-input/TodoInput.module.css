@@ -1,0 +1,45 @@
+.todoInputContainer {
+    width: 100%;
+}
+
+.todoInput {
+    height: 40px;
+    font-size: 24px;
+    width: 82%;
+    padding-left: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-input);
+    transition: all ease-out .2s;
+}
+
+
+
+.todoInput:focus {
+    border: 1px solid var(--border-input-focus);
+    transition: all ease-in .2s;
+}
+
+.todoInput::placeholder {
+    padding-left: 20%;
+    transition: all ease-out .2s;
+}
+
+.todoInput:focus::placeholder {
+    padding-left: 4px;
+    transition: all ease-in .2s;
+}
+
+@media only screen and (max-width: 500px) {
+    .todoInput::placeholder {
+        text-align: center;
+        padding-left: 0;
+        transition: all ease-out .2s;
+    }
+
+    .todoInput:focus::placeholder {
+        padding-left: 4px;
+        text-align: left;
+        transition: all ease-in .2s;
+    }
+
+}

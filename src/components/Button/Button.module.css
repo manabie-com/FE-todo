@@ -1,0 +1,21 @@
+.customButton {
+    padding: 10px 22px;
+    background-color: var(--button-primary);
+    border: none;
+    border-radius: 24px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    transition: all ease-out .1s ;
+}
+
+.customButton:hover {
+    opacity: .8;
+    transition: all ease-in .1s ;
+}
+
+.customButton:active {
+    opacity: 1;
+    transform: scale(.95);
+    transition: all ease-in .1s ;
+}

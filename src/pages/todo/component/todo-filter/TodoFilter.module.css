@@ -1,0 +1,70 @@
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.filterContainer .filterBtn {
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: 1px solid;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+    transition: .2s all ease-out;
+}
+
+.filterContainer .filterBtn:hover {
+    opacity: .8;
+    transition: .2s all ease-in;
+}
+
+.filterContainer .filterBtn:last-child {
+    margin-right: 0;
+}
+
+.filterContainer .filterBtn.current {
+    opacity: 1;
+    font-weight: bold;
+    padding: 5px 25px;
+    transition: .2s all ease-in;
+}
+
+.filterContainer .filterBtn.all {
+    border-color: var(--border-all-filter);
+    color: var(--border-all-filter);
+    background-color: var(--all-filter);
+}
+
+.filterContainer .filterBtn.active {
+    border-color: var(--border-active-filter);
+    color: var(--border-active-filter);
+    background-color: var(--active-filter);
+}
+
+.filterContainer .filterBtn.completed {
+    border-color: var(--border-completed-filter);
+    color: var(--border-completed-filter);
+    background-color: var(--completed-filter);
+}
+
+
+.filterContainer  .filterBtn.all.current {
+    background-color : var(--border-all-filter);
+    color:white;
+}
+
+.filterContainer  .filterBtn.active.current {
+    background-color : var(--border-active-filter);
+    color:white;
+}
+
+.filterContainer  .filterBtn.completed.current {
+    background-color : var(--border-completed-filter);
+    color:white;
+}

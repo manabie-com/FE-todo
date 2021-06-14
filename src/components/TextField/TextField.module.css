@@ -1,0 +1,125 @@
+.inputComponent {
+    width: 100%;
+    position: relative;
+}
+
+.inputComponent > div {
+    position: relative;
+}
+
+.inputComponent span {
+    position: absolute;
+    width: auto;
+    opacity: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color:var(--title-input);
+    background-color: white;
+    left: 16px;
+    top: 0;
+    transition: .1s ease-out all;
+}
+
+.inputComponent input::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--placeholder-input);
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.inputComponent input:focus::placeholder {
+    opacity: 0;
+}
+
+/* ======== Default Input ======== */
+.inputComponent input.inputField {
+    height: 50px;
+    width: 100%;
+    border: 1px solid var(--border-input);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 45px 0 15px;
+    box-shadow: none;
+    transition: .1s ease-out all;
+}
+
+
+.inputComponent input.inputDefault:focus {
+    border: 1px solid var(--border-input-focus);
+    transition: .1s ease-in all;
+}
+
+.inputComponent input.inputField.inputDefault:focus + .inputLabel {
+    opacity: 1;
+    top:-8px;
+    padding: 0 2px;
+    color: var(--title-input-focus);
+    transition: .2s ease-in all;
+}
+
+.inputComponent input.gotValue.inputDefault + .inputLabel {
+    opacity: 1;
+    top:-8px;
+    padding: 0 2px;
+}
+/* ======== End Default Input ======== */
+
+
+
+/* ======== Error Input ========*/
+.inputComponent input.inputError {
+    height: 50px;
+    width: 100%;
+    border: 1px solid var(--border-input-focus-error);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 45px 0 15px;
+    box-shadow: none;
+    transition: .1s ease-out all;
+}
+
+.inputComponent input.inputError:focus {
+    border: 1px solid var(--border-input-focus-error);
+    transition: .1s ease-in all;
+}
+
+.inputComponent input.inputField.inputError:focus + .inputLabel {
+    opacity: 1;
+    top:-8px;
+    padding: 0 2px;
+    color: var(--title-input-focus-error);
+    transition: .2s ease-in all;
+}
+
+.inputComponent input.gotValue.inputError + .inputLabel {
+    opacity: 1;
+    top:-8px;
+    color: var(--title-input-focus-error);
+    padding: 0 2px;
+}
+
+.errorMessage {
+    color: var(--title-input-focus-error);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 5px 15px 0 15px;
+    text-align: left;
+}
+/* ======== End Error Input ======== */
+

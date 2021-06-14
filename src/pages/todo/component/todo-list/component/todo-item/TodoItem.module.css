@@ -1,0 +1,126 @@
+.todoItemContainer {
+    padding: 5px 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+.todoItemContainer:hover {
+    background-color: var(--hover-default);
+    transition: all .2s ease-in;
+}
+
+.checkBoxContainer {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: var(--text-default);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkBoxContainer .todoText{
+    z-index: 0;
+    word-break: break-all;
+}
+
+.checkBoxContainer .todoText.strike {
+    text-decoration:line-through ;
+}
+
+.checkBoxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border-radius: 5px;
+    background-color: var(--background-checkbox);
+    transition: all ease-out .2s;
+}
+
+.checkBoxContainer:hover input ~ .checkmark {
+    background-color: var(--background-checkbox-hover);
+    transition: all ease-in .2s;
+}
+
+.checkBoxContainer input:checked ~ .checkmark {
+    background-color: var(--foreground-primary);
+    transition: all ease-in .2s;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkBoxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkBoxContainer .checkmark:after {
+    left: 8px;
+    top: 6px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.removeBtn {
+    color: var(--remove-btn);
+    background:none;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    vertical-align: center;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5px;
+    font-weight: 600;
+    transition: all ease-out .2s;
+}
+
+.removeBtn:hover {
+    transform: rotate(90deg);
+    transition: all ease-out .2s;
+}
+
+.removeBtn:active {
+    transform: scale(.95);
+    transition: all ease-out .2s;
+}
+
+.checkBoxContainer input.editTextField {
+    position: relative;
+    opacity: 1;
+    cursor: text;
+    width: 100%;
+    height: 22px;
+    font-size: 18px;
+    line-height: 24px;
+    border: 1px solid black;
+}

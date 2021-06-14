@@ -1,0 +1,27 @@
+.toolBarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 7%;
+}
+
+.actionBtn {
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    transition: ease-out all .2s;
+}
+
+.actionBtn:hover {
+    font-size: 14px;
+    transition: ease-in all .2s;
+}
+
+.actionBtn.markAll {
+    color: var(--mark-all)
+}
+
+.actionBtn.clearAll {
+    color: var(--remove-all)
+}

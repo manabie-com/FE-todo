@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--foreground-primary);
+}
+
+.formContainer {
+    height: 100%;
+    background-color: var(--background-primary);
+    width: 420px;
+}
+
+.formContainer .form {
+    padding: 30vh 20px;
+    margin: auto;
+}
+
+.formContainer .form img {
+    margin-bottom: 25px;
+}
+
+
+
+@media only screen and (max-height: 420px) {
+    .formContainer {
+        height: 100%;
+        width: 100%;
+    }
+}
