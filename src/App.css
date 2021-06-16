@@ -1,3 +1,12 @@
+:root {
+  --white: rgba(255, 255, 255, 1);
+  --primary: rgba(25, 118, 210, 1);
+  --acive: rgba(255, 152, 0, 1);
+  --completed: rgba(76, 175, 80, 1);
+  --clear: rgba(244, 67, 54, 1);
+  --grey: rgba(0, 0, 0, 0.23);
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -7,11 +16,13 @@
 button {
   outline: none;
   border: none;
-  box-shadow: 2px 0 2px currentColor;
   border-radius: 4px;
-  min-height: 32px;
+  min-height: 42px;
   min-width: 80px;
-  padding: 4px 8px;
+  padding: 6px 16px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 
 button:hover {
@@ -24,6 +35,7 @@ input[type="checkbox"] {
   box-shadow: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 input[type="checkbox"]:focus {
@@ -37,22 +49,20 @@ input {
   border: none;
   outline: none;
   padding: 0 12px;
-  box-shadow: 2px 0 4px rgba(0,0,0, 0.2);
   border-radius: 4px;
 }
 
 input:focus {
-  box-shadow: 1px 0 9px rgba(0,0,0, 0.25);
+  box-shadow: 1px 0 9px rgba(0, 0, 0, 0.25);
 }
 
-.ToDo__container {
-  border: 1px solid rgba(0,0,0, 0.13);
+.Todo__container {
+  border: 1px solid var(--grey);
   border-radius: 8px;
   width: 500px;
   margin-top: 5rem;
   padding: 24px;
-  box-shadow: 2px 2px 1px rgba(0,0,0, 0.09),
-              3px 2px 3px rgba(0,0,0, 0.05);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.09), 3px 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 .Todo__creation {
@@ -61,35 +71,70 @@ input:focus {
 
 .Todo__input {
   flex: 1 1;
+  border: 1px solid var(--grey);
 }
 
-.ToDo__list {
+.Todo__list {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
 }
 
-.ToDo__item {
+.Todo__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: ease 0.2s;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.ToDo__item > span {
+.Todo__item .Todo__content {
   flex: 1 1;
   text-align: left;
   margin-left: 8px;
 }
 
-.Todo__content {
-  flex: 1 1;
+.Todo__item:hover,
+.Todo__item--isEditable {
+  background-color: rgb(225, 245, 254);
+}
+
+.Todo__item--active .Todo__status {
+  background-color: var(--acive);
+}
+
+.Todo__item--completed .Todo__status {
+  background-color: var(--completed);
+}
+
+.Todo__status {
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  line-height: 1.3;
+  color: var(--white);
+  border-radius: 10px;
+  padding: 3px 8px;
+  margin-left: 5px;
+}
+
+.Todo__content--input {
+  font-size: 1rem;
+  min-width: 93%;
+}
+
+.Todo__action,
+.Todo__delete {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .Todo__delete {
+  padding: 3px 5px;
+  margin-right: 5px;
   outline: none;
   border: none;
-  width: 32px;
-  height: 32px;
   min-width: auto;
   min-height: auto;
   box-shadow: none;
@@ -98,12 +143,9 @@ input:focus {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.Todo__action, .Todo__delete {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
+  font-weight: 500;
+  color: #6b6b6b;
+  background-color: unset;
 }
 
 .Todo__toolbar {
@@ -122,4 +164,53 @@ input:focus {
 }
 
 .Action__btn {
+  color: var(--white);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+    cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+
+.Action__btn--all {
+  background-color: var(--primary);
+}
+
+.Action__btn--all:hover {
+  background-color: #135da7cc;
+}
+
+.Action__btn--active {
+  background-color: var(--acive);
+}
+
+.Action__btn--active:hover {
+  background-color: rgba(255, 152, 0, 0.8);
+}
+
+.Action__btn--completed {
+  background-color: var(--completed);
+}
+
+.Action__btn--completed:hover {
+  background-color: rgba(76, 175, 80, 0.8);
+}
+
+.Action__btn--clear {
+  background-color: var(--clear);
+}
+
+.Action__btn--clear:hover {
+  background-color: rgba(244, 67, 54, 0.8);
+}
+
+.Action__btn--all.Todo__filter--active {
+  background-color: rgba(12, 79, 146, 1);
+}
+
+.Action__btn--active.Todo__filter--active {
+  background-color: rgba(140, 84, 0, 1);
+}
+.Action__btn--completed.Todo__filter--active {
+  background-color: rgba(41, 99, 43, 1);
 }
