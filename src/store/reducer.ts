@@ -5,7 +5,8 @@ import {
   DELETE_ALL_TODOS,
   DELETE_TODO,
   TOGGLE_ALL_TODOS,
-  UPDATE_TODO_STATUS
+  UPDATE_TODO_STATUS,
+  UPDATE_TODO_CONTENT
 } from './actions';
 
 export interface AppState {
@@ -19,20 +20,35 @@ export const initialState: AppState = {
 function reducer(state: AppState, action: AppActions): AppState {
   switch (action.type) {
     case CREATE_TODO:
-      state.todos.push(action.payload);
-      return {
+      if (state.todos.filter(e => e.content === action.payload.content).length === 0) {
+        state.todos.push(action.payload);
+      }
+      state = {
         ...state
       };
-
+      break;
     case UPDATE_TODO_STATUS:
-      const index2 = state.todos.findIndex((todo) => todo.id === action.payload.todoId);
+      const index2 = state.todos.findIndex((todo) => todo.id === action.payload?.todoId);
       state.todos[index2].status = action.payload.checked ? TodoStatus.COMPLETED : TodoStatus.ACTIVE;
 
-      return {
+      state = {
         ...state,
         todos: state.todos
       }
-
+      break;
+    case UPDATE_TODO_CONTENT:
+        state.todos = state.todos.map((todo) => {
+          if (todo.id === action.payload.todoId) {
+            todo.content = action.payload.content
+          }
+          return todo;
+        });
+  
+        state = {
+          ...state,
+          todos: state.todos
+        }
+        break;
     case TOGGLE_ALL_TODOS:
       const tempTodos = state.todos.map((e)=>{
         return {
@@ -41,27 +57,31 @@ function reducer(state: AppState, action: AppActions): AppState {
         }
       })
 
-      return {
+      state = {
         ...state,
         todos: tempTodos
       }
-
+      break;
     case DELETE_TODO:
-      const index1 = state.todos.findIndex((todo) => todo.id === action.payload);
-      state.todos.splice(index1, 1);
-
-      return {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      state = {
         ...state,
         todos: state.todos
       }
+      break;
     case DELETE_ALL_TODOS:
-      return {
+      state = {
         ...state,
         todos: []
-      }
-    default:
-      return state;
+      };
+      break;
+    // default:
+    //   return state;
   }
+
+  localStorage.setItem('todos', JSON.stringify(state.todos));
+  
+  return state;
 }
 
 export default reducer;

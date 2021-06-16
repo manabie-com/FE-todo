@@ -1,13 +1,13 @@
 .App {
-  text-align: center;
+  align-items: center;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 button {
   outline: none;
   border: none;
-  box-shadow: 2px 0 2px currentColor;
   border-radius: 4px;
   min-height: 32px;
   min-width: 80px;
@@ -21,6 +21,7 @@ button:hover {
 input[type="checkbox"] {
   width: 24px;
   height: 24px;
+  min-width: 0!important;
   box-shadow: none;
   border: none;
   outline: none;
@@ -34,11 +35,15 @@ input[type="checkbox"]:focus {
 
 input {
   min-height: 36px;
+  min-width: 190px;
   border: none;
   outline: none;
   padding: 0 12px;
-  box-shadow: 2px 0 4px rgba(0,0,0, 0.2);
+  /* box-shadow: 2px 0 4px rgba(0,0,0, 0.2); */
   border-radius: 4px;
+  background-color: white;
+  border: 1px solid #e4e7ea;
+  color: #5c6873;
 }
 
 input:focus {
@@ -49,10 +54,10 @@ input:focus {
   border: 1px solid rgba(0,0,0, 0.13);
   border-radius: 8px;
   width: 500px;
-  margin-top: 5rem;
   padding: 24px;
-  box-shadow: 2px 2px 1px rgba(0,0,0, 0.09),
-              3px 2px 3px rgba(0,0,0, 0.05);
+  background-color: #fff; /* #f1fba0;*/
+  /* box-shadow: 2px 2px 1px rgba(0,0,0, 0.09),
+              3px 2px 3px rgba(0,0,0, 0.05); */
 }
 
 .Todo__creation {
@@ -122,4 +127,11 @@ input:focus {
 }
 
 .Action__btn {
+}
+
+@media (min-width: 576px) {
+  .md-p-4 {
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+  }
 }

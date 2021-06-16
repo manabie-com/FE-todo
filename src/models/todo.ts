@@ -3,6 +3,11 @@ export enum TodoStatus {
   COMPLETED = 'COMPLETED'
 }
 
+export enum ActionUpadte {
+  UPDATE = 'UPDATE', 
+  DISCARD = 'DISCARD'
+}
+
 export interface Todo {
   id: string
   user_id: string
