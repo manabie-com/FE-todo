@@ -1,0 +1,16 @@
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelName {
+  max-width: 50px;
+  margin: 10px 0px;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  outline: 0;
+}

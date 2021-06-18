@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.todo {
+  padding: 10px;
+  border: 1px solid var(--borderColor);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.nameTodo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--primary);
+  font-weight: var(--bold);
+  margin-right: 10px;
+  width: 100%;
+}
+
+.checkbox {
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+}
+
+.checkbox:after {
+  position: absolute;
+}
+
+.checkbox:checked:after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: var(--disabled);
+  border: 0;
+  z-index: 1;
+}
+
+.completed {
+  font-weight: var(--bold);
+  text-decoration: line-through;
+  color: var(--disabled);
+  letter-spacing: 1.2px;
+  width: 185px;
+}
+
+.active {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  word-wrap: break-word;
+  width: 185px;
+  position: relative;
+  letter-spacing: 1.2px;
+}
+
+.active:hover {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  margin: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.active:hover::after {
+  position: absolute;
+  content: 'Double click and edit content';
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 185px;
+}
+
+.remove {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  transform: scaleY(1);
+}
+
+.remove:hover {
+  background-color: red;
+  color: white;
+  transition: all 1s;
+  transition: transform scaleY(1.05) 1s;
+}

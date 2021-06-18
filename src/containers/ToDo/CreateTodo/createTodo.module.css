@@ -1,0 +1,33 @@
+.container {
+  position: fixed;
+  top: 0px;
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  z-index: 1;
+  padding: 10px;
+}
+
+.input {
+  margin-bottom: 10px;
+  color: var(--black);
+  width: 270px;
+}
+
+::placeholder {
+  color: var(--black);
+}
+
+.label {
+  max-width: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.boxInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnSignIn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.fieldSet {
+  border: 1px solid #ccc;
+  padding: 40px;
+  border-radius: 10px;
+}

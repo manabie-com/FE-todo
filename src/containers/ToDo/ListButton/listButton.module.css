@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  position: fixed;
+  left: 10px;
+  flex-direction: column;
+  width: 120px;
+  top: 10px;
+  z-index: 2;
+  background-color: var(--white);
+}
+
+.clicked {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    bottom: 10px;
+    width: 100%;
+    top: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

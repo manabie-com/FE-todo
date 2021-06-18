@@ -1,22 +1,15 @@
-import React from 'react';
-
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
-import SignInPage from './SignInPage';
-import ToDoPage from './ToDoPage';
-
+import React, { useReducer } from 'react';
+import routes from './routes';
+import reducer, { initialState, TodoContext } from '@store/reducer';
 import './App.css';
 
 function App() {
+  const [{ token, todos }, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <main className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={SignInPage}/>
-          <Route path="/todo" component={ToDoPage}/>
-        </Switch>
-      </BrowserRouter>
-    </main>
+    <TodoContext.Provider value={[{ token, todos }, dispatch]}>
+      {routes(token)}
+    </TodoContext.Provider>
   );
 }
 
