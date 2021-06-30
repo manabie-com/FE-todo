@@ -2,8 +2,9 @@ import React from 'react';
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-import SignInPage from './SignInPage';
-import ToDoPage from './ToDoPage';
+import SignInPage from './pages/SignInPage';
+import ToDoPage from './pages/ToDoPage';
+import Guard from './components/guard';
 
 import './App.css';
 
@@ -12,8 +13,16 @@ function App() {
     <main className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={SignInPage}/>
-          <Route path="/todo" component={ToDoPage}/>
+          <Route path="/" exact render={() => (
+            <Guard context="no-auth">
+              <SignInPage />
+            </Guard>
+          )}/>
+          <Route path="/todo" render={props => (
+            <Guard context="auth">
+              <ToDoPage {...props} />
+            </Guard>
+          )}/>
         </Switch>
       </BrowserRouter>
     </main>

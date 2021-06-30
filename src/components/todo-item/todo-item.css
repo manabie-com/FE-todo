@@ -1,0 +1,60 @@
+.ToDo__item, .ToDo__item__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ToDo__item {
+    padding: 8px;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.ToDo__item:last-child {
+    margin-bottom: 0;
+}
+
+.ToDo__item:hover {
+    background-color: #cecece;
+}
+
+.ToDo__item__content, .ToDo__item__content__change {
+    flex: 1 1;
+    padding-right: 8px;
+}
+
+.ToDo__item__content > span {
+    flex: 1 1;
+    text-align: left;
+    margin-left: 8px;
+}
+
+.Todo__content {
+    flex: 1 1;
+}
+
+.Todo__delete {
+    outline: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    min-width: auto;
+    min-height: auto;
+    box-shadow: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Todo__action, .Todo__delete {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.ToDo__item__content {
+    cursor: pointer;
+}

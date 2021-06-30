@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 
 import {useHistory} from 'react-router-dom'
-import Service from './service'
+import Service from '../service'
+import { set as storageSet, tokenName } from '../utils/storage'
 
 const SignInPage = () => {
+    // no need state here
+    // prevent go to this page after sign in
     const [form, setForm] = useState({
         userId: '',
         password: ''
@@ -14,7 +17,7 @@ const SignInPage = () => {
         e.preventDefault()
         const resp = await Service.signIn(form.userId, form.password)
 
-        localStorage.setItem('token', resp)
+        storageSet(tokenName, resp)
         history.push('/todo')
     }
 
@@ -27,7 +30,7 @@ const SignInPage = () => {
     }
 
     return (
-        <div style={{marginTop: '3rem', textAlign: 'left'}}>
+        <div data-testid="signin-page" style={{marginTop: '3rem', textAlign: 'left'}}>
             <form onSubmit={signIn}>
                 <label htmlFor="user_id">
                     User id

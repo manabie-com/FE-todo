@@ -1,3 +1,4 @@
+// file name should be type, not model
 export enum TodoStatus {
   ACTIVE = 'ACTIVE',
   COMPLETED = 'COMPLETED'
@@ -9,4 +10,5 @@ export interface Todo {
   content : string
   status?: TodoStatus
   created_date: string
+  editable: boolean
 }

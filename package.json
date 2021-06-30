@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
@@ -17,13 +17,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "shortid": "^2.2.15",
-    "typescript": "~3.7.2"
+    "typescript": "~3.8.0"
   },
   "scripts": {
     "start:fullstack": "cross-env REACT_APP_WHOAMI=fullstack react-scripts start",
     "start:frontend": "cross-env REACT_APP_WHOAMI=frontend react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
-    "@types/shortid": "^0.0.29"
+    "@types/shortid": "^0.0.29",
+    "jest-environment-jsdom-sixteen": "^2.0.0"
   }
 }

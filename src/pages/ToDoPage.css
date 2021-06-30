@@ -1,0 +1,41 @@
+.ToDo__container {
+    border: 1px solid rgba(0,0,0, 0.13);
+    border-radius: 8px;
+    width: 500px;
+    margin-top: 5rem;
+    padding: 24px;
+}
+
+.Todo__creation {
+    display: flex;
+}
+
+.Todo__input {
+    flex: 1 1;
+}
+
+.ToDo__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.Todo__toolbar {
+    display: flex;
+    margin-top: 24px;
+    align-items: center;
+}
+
+.Todo__tabs {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.Todo__tabs > *:not(:last-child) {
+    margin-right: 8px;
+}
+
+.Action__btn.active {
+    box-shadow: inset 2px 2px #cecece;
+}
